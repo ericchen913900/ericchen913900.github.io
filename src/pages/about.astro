@@ -1,25 +1,493 @@
 ---
-
-import { getEntry, render } from "astro:content";
-import Markdown from "@components/misc/Markdown.astro";
+// 保留 Fuwari 的主要版面配置和國際化(i18n)功能
+import MainGridLayout from "../layouts/MainGridLayout.astro";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
-import MainGridLayout from "../layouts/MainGridLayout.astro";
-
-const aboutPost = await getEntry("spec", "about");
-
-if (!aboutPost) {
-	throw new Error("About page content not found");
-}
-
-const { Content } = await render(aboutPost);
 ---
+
 <MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
-    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-        <div class="card-base z-10 px-9 py-6 relative w-full ">
-            <Markdown class="mt-2">
-                <Content />
-            </Markdown>
-        </div>
+  <main>
+    <div class="top">
+      <div class="largeName aos">yeee</div>
+      <h2 class="aos">AKA yeee, CTF Player</h2>
+      <p class="aos">
+        High school cybersecurity enthusiast and member of Bamboo Fox team.
+        Passionate about security and development, regularly writing CTF
+        write-ups and study notes, sharing tools and problem-solving approaches.
+      </p>
+      <h2>Skills</h2>
+      <img src="/avatar.jpg" alt="yeee profile photo" class="em" />
     </div>
+
+    <div class="skill">
+      <div>
+        <h3>I do</h3>
+        <ol>
+          <li>CTF Competitions</li>
+          <li>Web Security</li>
+          <li>Penetration Testing</li>
+          <li>Reverse Engineering</li>
+          <li>Cryptography</li>
+          <li>Binary Exploitation</li>
+          <li>Full Stack Development</li>
+          <li>Machine Learning</li>
+          <li>Quantum Physics</li>
+          <li>Technical Writing</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Languages & Tools</h3>
+        <ol>
+          <li>Python</li>
+          <li>C / C++</li>
+          <li>Bash / Shell</li>
+          <li>HTML / CSS</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Security Tools</h3>
+        <ol>
+          <li>Burp Suite</li>
+          <li>Wireshark</li>
+          <li>Metasploit</li>
+          <li>Nmap</li>
+          <li>IDA Pro / Ghidra</li>
+          <li>GDB / Pwndbg</li>
+          <li>John the Ripper</li>
+          <li>Hashcat</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2>Education</h2>
+    <div class="education">
+      <div class="school aos">
+        <div>
+          <h3>Dongshan High School</h3>
+          <p>2021 - now</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Working Experiences</h2>
+    <ul>
+      <li>Bamboo Fox Team - CTF Player <span>(2025 - Now)</span></li>
+    </ul>
+
+    <h2>Contest & Achievements</h2>
+    <h3>2025</h3>
+    <ul>
+      <li>
+        Sekai CTF 2025 - International CTF Competition Participant <span>(2025)</span>
+      </li>
+      <li>Joined Bamboo Fox Team</li>
+      <li>FINAL CTF - Community CTF Competition Participant</li>
+      <li>CTFtime Platform - Active Competitor</li>
+    </ul>
+
+    <h2>Community & Conference</h2>
+    <ul>
+      <li>
+        HITCON (Hacks in Taiwan Conference) - Attendee <span>(2025)</span>
+      </li>
+      <li>
+        SITCON 2025 - Students' Information Technology Conference Participant <span>(2025)</span>
+      </li>
+      <li>
+        Presidential Hackathon - National-level Hackathon Participant <span>(2025)</span>
+      </li>
+    </ul>
+
+    <div id="speaker">
+      <h2>Statistics</h2>
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number" id="blog-days">0</div>
+          <div class="stat-label">BLOG DAYS</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-label">ARTICLES</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">CTF EVENTS</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">SKILLS</div>
+        </div>
+      </div>
+    </div>
+  </main>
 </MainGridLayout>
+
+
+<style>
+  main {
+    margin: auto;
+    max-width: 1532px;
+    width: 100%;
+    padding: 25vh min(84px, 5vw) 0;
+    line-height: 1.5;
+    font-family: var(--font-family-sans); /* 使用全局無襯線字體 */
+    color: #ffffff;
+  }
+
+  main .largeName {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+  }
+
+  main .largeName,
+  .largeName + h2,
+  h2 + p {
+    opacity: 0;
+    transition: 0.3s ease-out;
+  }
+
+  .largeName.ed,
+  h2.ed,
+  h2 + p.ed {
+    opacity: 1;
+  }
+
+  main .largeName + h2 {
+    transition-delay: 0.2s;
+    color: var(--theme-color);
+    font-family: var(--font-family-mono); /* 使用全局等寬字體 */
+  }
+
+  h2 + p {
+    transition-delay: 0.4s;
+  }
+
+  main .largeName + h2 + p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    color: #cccccc;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: #cccccc;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--theme-color);
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  main .largeName + h2 {
+    letter-spacing: normal;
+    border: none;
+    margin-bottom: 1rem;
+    color: var(--theme-color);
+  }
+
+  .skill {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.3rem 0;
+    position: relative;
+    gap: 2rem;
+  }
+
+  .skill > div {
+    flex: 1;
+    line-height: 2;
+  }
+
+  .skill h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--theme-color);
+  }
+
+  .skill li {
+    list-style-type: none;
+    color: #e5e5e5;
+  }
+
+  .top {
+    position: relative;
+    z-index: 2;
+  }
+
+  .em {
+    position: absolute;
+    filter: grayscale(0.5) brightness(73%) contrast(192%);
+    bottom: 1px;
+    right: 0;
+    z-index: -1;
+    max-width: max(50vw, 30rem);
+    height: 30rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  ul {
+    margin: 1rem;
+  }
+
+  li {
+    color: #e5e5e5;
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  li.ed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.3s ease-out;
+  }
+
+  ul li {
+    margin: 0.5rem;
+  }
+
+  main span {
+    color: var(--theme-color);
+    font-style: italic;
+    font-family: var(--font-family-mono); /* 使用全局等寬字體 */
+  }
+
+  main a {
+    text-decoration: none;
+    position: relative;
+    color: var(--theme-color);
+  }
+
+  main a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--theme-color);
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  main a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .education {
+    width: 100%;
+    padding-block: 2rem;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: -1rem;
+  }
+
+  .education::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--theme-color) 10%,
+      var(--theme-color) 80%,
+      transparent
+    );
+    margin: 1rem 0;
+  }
+
+  .education .school:nth-child(odd) {
+    padding-right: calc(50% + 2rem);
+    text-align: right;
+    transform: translateX(2rem);
+  }
+
+  .education .school:nth-child(even) {
+    padding-left: calc(50% + 2rem);
+    transform: translateX(-2rem);
+  }
+
+  .school {
+    position: relative;
+    opacity: 0;
+    transition: 0.5s ease-out;
+  }
+
+  .education .school.ed {
+    opacity: 1;
+    transform: none;
+  }
+
+  .school::after {
+    content: "";
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+  }
+
+  .school:nth-child(odd)::after {
+    background: linear-gradient(90deg, transparent, var(--theme-color));
+  }
+
+  .school:nth-child(even)::after {
+    background: linear-gradient(270deg, transparent, var(--theme-color));
+    transform: translate(0%, -50%);
+  }
+
+  .school p {
+    margin-top: 0;
+    color: var(--theme-color);
+    font-family: var(--font-family-mono); /* 使用全局等寬字體 */
+  }
+
+  .school h3 {
+    color: #ffffff;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: hsla(var(--theme-hue), 80%, 65%, 0.1);
+    border: 1px solid var(--theme-color);
+    border-radius: 8px;
+    min-width: 150px;
+    transition: all 0.3s ease;
+  }
+
+  .stat-item:hover {
+    background: hsla(var(--theme-hue), 80%, 65%, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--theme-color);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-family-mono); /* 使用全局等寬字體 */
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-family-mono); /* 使用全局等寬字體 */
+  }
+
+  h3 {
+    color: var(--theme-color);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* 響應式設計 */
+  @media (max-width: 50rem) {
+    .em {
+      opacity: 0.6;
+    }
+
+    .stats-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .stat-item {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  h1 {
+    display: none;
+  }
+</style>
+
+<script>
+  // 您的所有 JavaScript 腳本都放在這裡
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.bottom < 0 || rect.top > window.innerHeight;
+  }
+
+  function addClassToVisibleElements() {
+    var aosElements = document.querySelectorAll(".aos, li");
+    aosElements.forEach(function (aosElement) {
+      if (!isElementInViewport(aosElement)) aosElement.classList.add("ed");
+      else aosElement.classList.remove("ed");
+    });
+  }
+
+  const showBody = () => {
+    document.body.style.opacity = "1";
+    setTimeout(() => {
+      addClassToVisibleElements();
+    }, 300);
+  };
+
+  // 計算部落格運行天數
+  function updateBlogDays() {
+    const startDate = new Date("2024-01-01");
+    const currentDate = new Date();
+    const timeDiff = currentDate.getTime() - startDate.getTime();
+    const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    const blogDaysElement = document.getElementById("blog-days");
+    if (blogDaysElement) {
+      let currentNumber = 0;
+      const increment = Math.ceil(daysDiff / 50);
+      const timer = setInterval(() => {
+        currentNumber += increment;
+        if (currentNumber >= daysDiff) {
+          currentNumber = daysDiff;
+          clearInterval(timer);
+        }
+        blogDaysElement.textContent = currentNumber.toString();
+      }, 30);
+    }
+  }
+
+  // 頁面載入和滾動事件
+  document.addEventListener("scroll", addClassToVisibleElements);
+  window.addEventListener("pageshow", showBody);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("About page loaded successfully!");
+    updateBlogDays();
+
+    // 初始動畫
+    setTimeout(() => {
+      addClassToVisibleElements();
+    }, 100);
+  });
+</script>
