@@ -25,6 +25,7 @@ A highly motivated high school student with a proven passion for cybersecurity, 
 | 2025-08-15  | Sekai CTF 2025                    | 80 / 1054   | Bamboo Fox   |
 | 2025-09-21  | is1ab::CTF                        | 27 / 70     | solo   |
 | 2025-08-24  | HITCON CTF 2025              | 13 / 717    | Bamboo Fox   |
+| 2025-10-18/19  | HITCON Final CTF 2025              | 1 / 6    | Bamboo Fox   |
 
 
 ---
@@ -41,3 +42,4 @@ A highly motivated high school student with a proven passion for cybersecurity, 
 -   **HITCON 2025** (Hacks in Taiwan Conference) - Attendee
 -   **SITCON 2025** (Students' Information Technology Conference) - Attendee
 -   **Presidential Hackathon** - Participant
+-   **HITCON Cyber Range x CTF 2025**- Attendee
