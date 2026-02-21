@@ -22,10 +22,23 @@ A highly motivated high school student with a proven passion for cybersecurity, 
 
 | Date        | Event                             | Rank         | Team         |
 | :---------- | :-------------------------------- | :----------- | :----------- |
+| 2026        | FhCTF                             | rk. 1        | 麥當勞       |
+| 2026        | AIS3 EOF Preliminary              | rk. 3        | 24個albert55688 |
+| 2026        | AIS3 EOF Finals                   | Green Butter KuaiKuai Award | 24個albert55688 |
 | 2025-08-15  | Sekai CTF 2025                    | 80 / 1054   | Bamboo Fox   |
 | 2025-09-21  | is1ab::CTF                        | 27 / 70     | solo   |
 | 2025-08-24  | HITCON CTF 2025              | 13 / 717    | Bamboo Fox   |
 | 2025-10-18/19  | HITCON Final CTF 2025              | 1 / 6    | Bamboo Fox   |
+
+### Awards
+
+-   **AIS3 EOF Finals** - Green Butter KuaiKuai Award (綠奶油乖乖獎)
+
+### 施工區
+
+- [ ] FhCTF rk.1 解題與賽後心得
+- [ ] AIS3 EOF 初賽 rk.3 準備與比賽心得
+- [ ] AIS3 EOF 決賽與綠奶油乖乖獎心得
 
 
 ---
