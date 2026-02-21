@@ -1,6 +1,6 @@
 # About Me
-you can me shaobingbujiadan / 燒餅
-## yeee
+You can call me shaobingbujiadan / 燒餅.
+## yeee3642
 **Cybersecurity Enthusiast & CTF Player**
 
 A highly motivated high school student with a proven passion for cybersecurity, currently serving as a CTF Player for the **Bamboo Fox** team. I specialize in web security, penetration testing, and reverse engineering, with a strong foundation in a variety of security tools and programming languages. I am dedicated to sharing knowledge by authoring detailed CTF write-ups and technical articles.
@@ -43,3 +43,10 @@ A highly motivated high school student with a proven passion for cybersecurity, 
 -   **SITCON 2025** (Students' Information Technology Conference) - Attendee
 -   **Presidential Hackathon** - Participant
 -   **HITCON Cyber Range x CTF 2025**- Attendee
+
+---
+
+### Contact
+
+- GitHub: [github.com/ericchen913900](https://github.com/ericchen913900)
+- Instagram: [@1_bcy_](https://www.instagram.com/1_bcy_/)
