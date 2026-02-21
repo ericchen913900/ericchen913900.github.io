@@ -31,6 +31,13 @@ interface Group {
 
 let groups: Group[] = [];
 
+$: hasFilters = tags.length > 0 || categories.length > 0 || !!uncategorized;
+$: activeFilters = [
+	...categories.map((category) => `category:${category}`),
+	...tags.map((tag) => `tag:${tag}`),
+	...(uncategorized ? ["uncategorized"] : []),
+];
+
 function formatDate(date: Date) {
 	const month = (date.getMonth() + 1).toString().padStart(2, "0");
 	const day = date.getDate().toString().padStart(2, "0");
@@ -39,6 +46,10 @@ function formatDate(date: Date) {
 
 function formatTag(tagList: string[]) {
 	return tagList.map((t) => `#${t}`).join(" ");
+}
+
+function clearFilters() {
+	window.location.href = window.location.pathname;
 }
 
 onMount(async () => {
@@ -86,6 +97,20 @@ onMount(async () => {
 </script>
 
 <div class="card-base px-8 py-6">
+    {#if hasFilters}
+        <div class="mb-4 rounded-xl bg-[var(--btn-regular-bg)] p-3">
+            <div class="mb-2 text-sm font-semibold text-75">Active Filters</div>
+            <div class="mb-3 flex flex-wrap gap-2">
+                {#each activeFilters as filter}
+                    <span class="rounded-md bg-[var(--btn-regular-bg-hover)] px-2 py-1 text-xs text-75">{filter}</span>
+                {/each}
+            </div>
+            <button type="button" class="btn-regular rounded-lg px-3 py-1.5 text-sm font-semibold" on:click={clearFilters}>
+                Clear filters
+            </button>
+        </div>
+    {/if}
+
     {#each groups as group}
         <div>
             <div class="flex flex-row w-full items-center h-[3.75rem]">
