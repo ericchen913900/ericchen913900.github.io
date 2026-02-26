@@ -1,14 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Atkinson+Hyperlegible:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap");
+
+@tailwind base;
 @tailwind components;
+
+@layer base {
+	body {
+		font-family: "Atkinson Hyperlegible", "Noto Sans TC", sans-serif;
+		background:
+			radial-gradient(circle at 14% -6%, color-mix(in oklch, var(--primary) 22%, transparent), transparent 38%),
+			radial-gradient(circle at 84% 118%, rgba(255, 255, 255, 0.06), transparent 33%),
+			linear-gradient(170deg, oklch(0.18 0.02 var(--hue)), oklch(0.12 0.015 var(--hue)) 55%, oklch(0.09 0.01 var(--hue)));
+		background-attachment: fixed;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Audiowide", "Noto Sans TC", sans-serif;
+		letter-spacing: 0.02em;
+	}
+}
 
 @layer components {
     .card-base {
-        @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition;
+		@apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition border border-white/10 dark:border-white/10;
+		box-shadow: 0 16px 38px -22px rgba(0, 0, 0, 0.75);
     }
     h1, h2, h3, h4, h5, h6, p, a, span, li, ul, ol, blockquote, code, pre, table, th, td, strong {
         @apply transition;
     }
     .card-shadow {
-        @apply drop-shadow-[0_2px_4px_rgba(0,0,0,0.005)]
+		@apply drop-shadow-[0_10px_18px_rgba(0,0,0,0.22)]
     }
     .expand-animation {
         @apply relative before:ease-out before:transition active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0
@@ -39,7 +64,8 @@
     }
     .btn-plain {
         @apply transition relative flex items-center justify-center bg-none
-        text-black/75 hover:text-[var(--primary)] dark:text-white/75 dark:hover:text-[var(--primary)];
+		text-black/75 hover:text-[var(--primary)] dark:text-white/75 dark:hover:text-[var(--primary)];
+		letter-spacing: 0.02em;
         &:not(.scale-animation) {
             @apply hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)]
         }
@@ -51,8 +77,8 @@
         }
     }
     .btn-regular {
-        @apply transition flex items-center justify-center bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] active:bg-[var(--btn-regular-bg-active)]
-        text-[var(--btn-content)] dark:text-white/75
+		@apply transition flex items-center justify-center bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] active:bg-[var(--btn-regular-bg-active)]
+		text-[var(--btn-content)] dark:text-white/75 border border-white/10
     }
 
     .link-underline {
@@ -109,6 +135,128 @@
     }
     .btn-regular-dark.success {
         @apply bg-[oklch(0.75_0.14_var(--hue))] dark:bg-[oklch(0.75_0.14_var(--hue))]
+    }
+
+    .navbar-shell {
+		filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.28));
+    }
+    .navbar-top-fill {
+		background: linear-gradient(180deg, rgba(8, 13, 16, 0.86), transparent 80%);
+    }
+    .navbar-inner {
+		backdrop-filter: blur(12px);
+		background:
+			radial-gradient(circle at 14% 120%, color-mix(in oklch, var(--primary) 18%, transparent), transparent 42%),
+			color-mix(in oklch, var(--card-bg) 92%, rgba(11, 16, 20, 0.45));
+    }
+    .navbar-home,
+    .navbar-link {
+		letter-spacing: 0.03em;
+    }
+    .navbar-icon-btn {
+		border: 1px solid color-mix(in oklch, var(--primary) 26%, rgba(255, 255, 255, 0.18));
+    }
+
+    .post-card {
+		background:
+			linear-gradient(160deg, color-mix(in oklch, var(--card-bg) 96%, black 4%), color-mix(in oklch, var(--card-bg) 86%, rgba(14, 21, 25, 0.48)));
+		border-color: color-mix(in oklch, var(--primary) 12%, rgba(255, 255, 255, 0.14));
+    }
+    .post-card-title {
+		text-wrap: balance;
+    }
+    .post-card-category {
+		border: 1px solid color-mix(in oklch, var(--primary) 28%, rgba(255, 255, 255, 0.12));
+    }
+    .post-card-description {
+		color: color-mix(in oklch, var(--btn-content) 42%, white 58%);
+    }
+    .post-card-stats {
+		color: color-mix(in oklch, var(--btn-content) 35%, rgba(255, 255, 255, 0.5));
+    }
+    .post-card-mobile-divider {
+		border-color: color-mix(in oklch, var(--primary) 14%, rgba(255, 255, 255, 0.14));
+    }
+
+    .site-main-shell {
+		padding: 0.2rem;
+		border-radius: calc(var(--radius-large) + 0.3rem);
+		background:
+			radial-gradient(circle at 8% -18%, color-mix(in oklch, var(--primary) 10%, transparent), transparent 28%),
+			linear-gradient(165deg, rgba(6, 10, 14, 0.64), rgba(9, 14, 19, 0.28));
+		border: 1px solid color-mix(in oklch, var(--primary) 9%, rgba(255, 255, 255, 0.08));
+    }
+    .site-content-shell {
+		background: color-mix(in oklch, var(--page-bg) 64%, rgba(7, 10, 14, 0.64));
+		border-radius: var(--radius-large);
+		padding: 0.15rem;
+		min-height: 16rem;
+    }
+    .sidebar-shell {
+		position: relative;
+    }
+    .sidebar-shell::before {
+		content: "";
+		position: absolute;
+		inset: -0.5rem -0.35rem;
+		border-radius: calc(var(--radius-large) + 0.8rem);
+		background: radial-gradient(circle at 50% 0, color-mix(in oklch, var(--primary) 8%, transparent), transparent 65%);
+		pointer-events: none;
+		z-index: -1;
+    }
+
+    .profile-card,
+    .quick-access-card,
+    widget-layout.card-base {
+		background:
+			radial-gradient(circle at 88% -8%, color-mix(in oklch, var(--primary) 12%, transparent), transparent 38%),
+			linear-gradient(165deg, color-mix(in oklch, var(--card-bg) 95%, transparent), color-mix(in oklch, var(--card-bg) 88%, rgba(8, 12, 16, 0.42)));
+		border-color: color-mix(in oklch, var(--primary) 10%, rgba(255, 255, 255, 0.12));
+    }
+    .profile-name {
+		font-family: "Audiowide", "Noto Sans TC", sans-serif;
+		font-size: 1.08rem;
+    }
+    .profile-bio {
+		color: color-mix(in oklch, var(--btn-content) 26%, rgba(255, 255, 255, 0.62));
+    }
+    .profile-socials .btn-regular,
+    .quick-access-link {
+		border: 1px solid color-mix(in oklch, var(--primary) 24%, rgba(255, 255, 255, 0.2));
+		box-shadow: 0 8px 22px -16px rgba(0, 0, 0, 0.56);
+    }
+    .quick-access-title {
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+    }
+
+    .footer-divider {
+		border-color: color-mix(in oklch, var(--primary) 16%, rgba(255, 255, 255, 0.14));
+    }
+    .footer-shell {
+		background:
+			radial-gradient(circle at 16% -18%, color-mix(in oklch, var(--primary) 15%, transparent), transparent 42%),
+			linear-gradient(175deg, color-mix(in oklch, var(--card-bg) 96%, transparent), color-mix(in oklch, var(--card-bg) 86%, rgba(6, 9, 13, 0.4)));
+		border-color: color-mix(in oklch, var(--primary) 12%, rgba(255, 255, 255, 0.16));
+		padding-top: 1.2rem;
+		padding-bottom: 1.2rem;
+    }
+    .footer-copy {
+		line-height: 1.85;
+    }
+
+    @media (max-width: 768px) {
+		.site-main-shell,
+		.site-content-shell {
+			padding: 0;
+			background: transparent;
+			border: 0;
+		}
+
+		.footer-divider {
+			margin-left: 1.25rem;
+			margin-right: 1.25rem;
+		}
     }
 }
 

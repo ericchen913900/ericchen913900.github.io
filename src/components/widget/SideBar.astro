@@ -15,11 +15,11 @@ const className = Astro.props.class;
 <div id="sidebar" class:list={[className, "w-full"]}>
     <div class="flex flex-col w-full gap-4 mb-4">
         <Profile></Profile>
-        <div class="card-base p-4">
-            <div class="mb-2 text-sm font-semibold text-75">Quick Access</div>
+        <div class="quick-access-card card-base p-4">
+            <div class="quick-access-title mb-2 text-sm font-semibold text-75">Quick Access</div>
             <div class="flex flex-wrap gap-2">
-                <a href={getCategoryUrl("writeup")} class="btn-regular rounded-lg px-3 py-2 text-sm font-semibold">Writeups</a>
-                <a href={getTagUrl("CTF")} class="btn-regular rounded-lg px-3 py-2 text-sm font-semibold">CTF</a>
+                <a href={getCategoryUrl("writeup")} class="quick-access-link btn-regular rounded-lg px-3 py-2 text-sm font-semibold">Writeups</a>
+                <a href={getTagUrl("CTF")} class="quick-access-link btn-regular rounded-lg px-3 py-2 text-sm font-semibold">CTF</a>
             </div>
         </div>
     </div>

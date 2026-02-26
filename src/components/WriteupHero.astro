@@ -1,0 +1,289 @@
+---
+import { profileConfig, siteConfig } from "@/config";
+import RotatingGlobe from "./RotatingGlobe.svelte";
+
+const rotateLines = [
+	"CTF Writeups",
+	"Web Security Notes",
+	"Reverse Engineering Logs",
+	"Crypto Challenge Breakdowns",
+];
+---
+
+<section class="writeup-hero card-base onload-animation">
+	<div class="hero-grid"></div>
+	<div class="hero-noise"></div>
+	<div class="hero-content">
+		<div class="hero-copy">
+			<div class="eyebrow">{siteConfig.title}</div>
+			<h1 class="hero-title">
+				Capture The Flag
+				<span class="hero-title-accent">Orbital Field Journal</span>
+			</h1>
+			<div class="hero-rotator" aria-label="Topic highlights">
+				{rotateLines.map((line) => (
+					<span class="rotator-line">{line}</span>
+				))}
+			</div>
+			<p class="hero-description">
+				Readable writeups, reproducible exploit paths, and post-match notes tuned for speed under pressure.
+			</p>
+			<div class="hero-links">
+				{profileConfig.links.map((item) => (
+					<a href={item.url} target="_blank" rel="noopener noreferrer" class="hero-pill">
+						{item.name}
+					</a>
+				))}
+			</div>
+		</div>
+		<div class="hero-orbit">
+			<RotatingGlobe client:load />
+			<p class="orbit-caption">
+				Rotating globe inspired by elvisdragonmao/website, rebuilt for Astro + Fuwari.
+			</p>
+		</div>
+	</div>
+	<div class="hero-metrics">
+		<div>
+			<span class="metric-label">Focus</span>
+			<span class="metric-value">Web / Reverse / Crypto</span>
+		</div>
+		<div>
+			<span class="metric-label">Format</span>
+			<span class="metric-value">Repro Steps + Notes</span>
+		</div>
+		<div>
+			<span class="metric-label">Language</span>
+			<span class="metric-value">Traditional Chinese + English</span>
+		</div>
+		<p class="metric-footnote">
+			This journal favors practical exploit chain clarity over puzzle theatrics.
+		</p>
+	</div>
+</section>
+
+<style>
+	.writeup-hero {
+		position: relative;
+		overflow: hidden;
+		padding: 2.2rem;
+		margin-bottom: 1rem;
+		background:
+			radial-gradient(circle at 14% 16%, color-mix(in oklch, var(--primary) 38%, transparent), transparent 56%),
+			radial-gradient(circle at 82% 78%, rgba(97, 255, 239, 0.15), transparent 46%),
+			linear-gradient(145deg, rgba(5, 12, 16, 0.95), rgba(10, 20, 27, 0.94) 38%, rgba(5, 16, 21, 0.98));
+		border: 1px solid rgba(164, 255, 240, 0.2);
+		box-shadow: 0 30px 68px -44px rgba(10, 188, 177, 0.72);
+	}
+
+	.hero-grid {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+		background-size: 34px 34px;
+		opacity: 0.22;
+		mask-image: linear-gradient(to bottom, black, transparent 86%);
+		pointer-events: none;
+	}
+
+	.hero-noise {
+		position: absolute;
+		inset: 0;
+		background-image: radial-gradient(rgba(162, 255, 239, 0.1) 0.35px, transparent 0.35px);
+		background-size: 4px 4px;
+		opacity: 0.22;
+		mix-blend-mode: screen;
+		pointer-events: none;
+	}
+
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		gap: 1.6rem;
+		position: relative;
+		z-index: 2;
+	}
+
+	.hero-copy {
+		align-self: center;
+	}
+
+	.hero-orbit {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.orbit-caption {
+		font-size: 0.73rem;
+		line-height: 1.5;
+		text-align: center;
+		max-width: 34ch;
+		color: rgba(198, 238, 233, 0.72);
+	}
+
+	.eyebrow {
+		font-size: 0.74rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.68);
+		margin-bottom: 0.8rem;
+	}
+
+	.hero-title {
+		font-size: clamp(1.8rem, 4.4vw, 3.35rem);
+		line-height: 1.1;
+		font-weight: 700;
+		color: rgba(248, 252, 255, 0.95);
+		margin-bottom: 0.7rem;
+	}
+
+	.hero-title-accent {
+		display: block;
+		font-size: clamp(1.03rem, 2.2vw, 1.45rem);
+		font-family: "Audiowide", "Noto Sans TC", sans-serif;
+		color: color-mix(in oklch, var(--primary) 82%, white 18%);
+		margin-top: 0.35rem;
+	}
+
+	.hero-rotator {
+		height: 1.45rem;
+		overflow: hidden;
+		position: relative;
+		margin-bottom: 0.8rem;
+	}
+
+	.rotator-line {
+		display: block;
+		font-size: 0.92rem;
+		color: rgba(206, 223, 232, 0.88);
+		line-height: 1.45rem;
+		animation: cycle-lines 12s infinite;
+	}
+
+	.rotator-line:nth-child(2) {
+		animation-delay: 3s;
+	}
+
+	.rotator-line:nth-child(3) {
+		animation-delay: 6s;
+	}
+
+	.rotator-line:nth-child(4) {
+		animation-delay: 9s;
+	}
+
+	.hero-description {
+		color: rgba(223, 236, 244, 0.78);
+		max-width: 48ch;
+		font-size: 0.98rem;
+		line-height: 1.68;
+		margin-bottom: 1rem;
+	}
+
+	.hero-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.hero-pill {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.45rem 0.82rem;
+		border-radius: 9999px;
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		color: rgba(241, 247, 252, 0.9);
+		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		text-decoration: none;
+		transition: 180ms ease;
+	}
+
+	.hero-pill:hover {
+		transform: translateY(-1px);
+		background: color-mix(in oklch, var(--primary) 35%, rgba(255, 255, 255, 0.1));
+		border-color: color-mix(in oklch, var(--primary) 55%, rgba(255, 255, 255, 0.2));
+	}
+
+	.hero-metrics {
+		position: relative;
+		z-index: 2;
+		margin-top: 1.15rem;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.7rem;
+	}
+
+	.hero-metrics > div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(176, 255, 243, 0.2);
+		border-radius: 0.8rem;
+		padding: 0.72rem 0.78rem;
+	}
+
+	.metric-label {
+		font-size: 0.68rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: rgba(181, 233, 226, 0.72);
+	}
+
+	.metric-value {
+		font-size: 0.83rem;
+		line-height: 1.4;
+		color: rgba(236, 247, 255, 0.9);
+	}
+
+	.metric-footnote {
+		grid-column: 1 / -1;
+		font-size: 0.76rem;
+		line-height: 1.5;
+		margin-top: 0.25rem;
+		color: rgba(192, 236, 233, 0.75);
+	}
+
+	@keyframes cycle-lines {
+		0%, 20% {
+			opacity: 0;
+			transform: translateY(120%);
+		}
+		25%, 45% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		50%, 100% {
+			opacity: 0;
+			transform: translateY(-120%);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.writeup-hero {
+			padding: 1.35rem;
+		}
+
+		.hero-content {
+			grid-template-columns: 1fr;
+			gap: 1.05rem;
+		}
+
+		.hero-orbit {
+			order: -1;
+		}
+
+		.hero-metrics {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
