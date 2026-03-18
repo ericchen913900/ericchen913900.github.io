@@ -1,25 +1,106 @@
 ---
+import PageLayout from "@/layouts/Base.astro";
 
-import { getEntry, render } from "astro:content";
-import Markdown from "@components/misc/Markdown.astro";
-import I18nKey from "../i18n/i18nKey";
-import { i18n } from "../i18n/translation";
-import MainGridLayout from "../layouts/MainGridLayout.astro";
-
-const aboutPost = await getEntry("spec", "about");
-
-if (!aboutPost) {
-	throw new Error("About page content not found");
-}
-
-const { Content } = await render(aboutPost);
+const meta = {
+	description: "About yeee3642, competition history, and current CTF work.",
+	title: "About",
+};
 ---
-<MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
-    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-        <div class="card-base z-10 px-9 py-6 relative w-full ">
-            <Markdown class="mt-2">
-                <Content />
-            </Markdown>
-        </div>
-    </div>
-</MainGridLayout>
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-12">About</h1>
+	<div class="prose prose-sm prose-cactus max-w-none">
+		<p>
+			You can call me <strong>shaobingbujiadan</strong>. I&apos;m a Taiwanese high school student and a
+			CTF player for <strong>Bamboo Fox</strong>, mostly working on web security, reverse engineering,
+			and cryptography challenges.
+		</p>
+		<p>
+			This site is where I keep detailed writeups, competition notes, and the ideas I want to revisit
+			after each event.
+		</p>
+
+		<h2>Competition Highlights</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Event</th>
+					<th>Result</th>
+					<th>Team</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2026</td>
+					<td>FhCTF</td>
+					<td>Rank 1</td>
+					<td>McDonalds</td>
+				</tr>
+				<tr>
+					<td>2026</td>
+					<td>UTCTF</td>
+					<td>72nd all clear</td>
+					<td>TakeKitsune</td>
+				</tr>
+				<tr>
+					<td>2026</td>
+					<td>AIS3 EOF Preliminary</td>
+					<td>Rank 3</td>
+					<td>24 Albert55688</td>
+				</tr>
+				<tr>
+					<td>2026</td>
+					<td>AIS3 EOF Finals</td>
+					<td>Green Butter KuaiKuai Award</td>
+					<td>24 Albert55688</td>
+				</tr>
+				<tr>
+					<td>2025-10-18/19</td>
+					<td>HITCON Final CTF 2025</td>
+					<td>1 / 6</td>
+					<td>Bamboo Fox</td>
+				</tr>
+				<tr>
+					<td>2025-09-21</td>
+					<td>is1ab::CTF</td>
+					<td>27 / 70</td>
+					<td>Solo</td>
+				</tr>
+				<tr>
+					<td>2025-08-24</td>
+					<td>HITCON CTF 2025</td>
+					<td>13 / 717</td>
+					<td>Bamboo Fox</td>
+				</tr>
+				<tr>
+					<td>2025-08-15</td>
+					<td>Sekai CTF 2025</td>
+					<td>80 / 1054</td>
+					<td>Bamboo Fox</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Current Focus</h2>
+		<ul>
+			<li>Publishing the full FhCTF rank 1 writeup and post-match notes.</li>
+			<li>整理 AIS3 EOF Preliminary 與 Finals 的比賽筆記。</li>
+			<li>Keeping a cleaner archive of web, reverse, and crypto solves.</li>
+		</ul>
+
+		<h2>Community</h2>
+		<ul>
+			<li>HITCON 2025 attendee</li>
+			<li>SITCON 2025 attendee</li>
+			<li>Presidential Hackathon participant</li>
+			<li>HITCON Cyber Range x CTF 2025 attendee</li>
+		</ul>
+
+		<h2>Contact</h2>
+		<ul>
+			<li><a href="https://github.com/ericchen913900" rel="noreferrer" target="_blank">GitHub</a></li>
+			<li><a href="https://www.instagram.com/1_bcy_/" rel="noreferrer" target="_blank">Instagram</a></li>
+		</ul>
+	</div>
+</PageLayout>

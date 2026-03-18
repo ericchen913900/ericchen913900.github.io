@@ -1,37 +1,21 @@
-## Type of change
+<!-- Thank you for opening a PR and making this theme even better, I appreciate you taking the time to help out 🙌 -->
 
-- [ ] Bug fix (a non-breaking change that fixes an issue)
-- [ ] New feature (a non-breaking change that adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Other (please describe):
+#### What kind of changes does this PR include?
 
-## Checklist
+<!-- Delete any that don’t apply -->
 
-- [ ] I have read the [**CONTRIBUTING**](https://github.com/saicaca/fuwari/blob/main/CONTRIBUTING.md) document.
-- [ ] I have checked to ensure that this Pull Request is not for personal changes.
-- [ ] I have performed a self-review of my own code.
-- [ ] My changes generate no new warnings.
+- Minor fixes (broken links, typos, css, etc.)
+- Changes with larger consequences (logic, library updates, etc.)
+- Something else!
 
-## Related Issue
+#### Description
 
-<!-- Please link to the issue that this pull request addresses. e.g. #123 -->
+- Closes # <!-- Add an issue number if this PR will close it. -->
+- What does this PR change? A brief description would be great.
+- Did you change something visual? A before/after screenshot can be helpful.
 
-
-## Changes
-
-<!-- Please describe the changes you made in this pull request. -->
-
-
-## How To Test
-
-<!-- Please describe how you tested your changes. -->
-
-
-## Screenshots (if applicable)
-
-<!-- If you made any UI changes, please include screenshots. -->
-
-
-## Additional Notes
-
-<!-- Any additional information that you want to share with the reviewer. -->
+<!--
+Here’s what will happen next:
+Hopefully I'll get time soon after your pull request to take a look and may ask you to make changes.
+I'll try to be responsive, but don’t worry if this takes a week or 2.
+-->

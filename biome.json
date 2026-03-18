@@ -1,29 +1,39 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
-	"vcs": {
-		"enabled": false,
-		"clientKind": "git",
-		"useIgnoreFile": false
-	},
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"ignoreUnknown": false,
 		"includes": [
 			"**",
-			"!**/src/**/*.css",
-			"!**/src/public/**/*",
-			"!**/dist/**/*",
-			"!**/node_modules/**/*"
+			"!**/build",
+			"!**/dist",
+			"!**/node_modules",
+			"!**/.vercel",
+			"!**/.netlify",
+			"!**/.vscode",
+			"!**/.astro"
 		]
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"lineEnding": "lf",
+		"lineWidth": 100,
+		"expand": "auto"
 	},
-	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"a11y": {
+				"noSvgWithoutTitle": "off"
+			},
 			"style": {
 				"noParameterAssign": "error",
 				"useAsConstAssertion": "error",
@@ -34,18 +44,28 @@
 				"noUnusedTemplateLiteral": "error",
 				"useNumberNamespace": "error",
 				"noInferrableTypes": "error",
-				"noUselessElse": "error"
-			}
+				"noUselessElse": "error",
+				"useImportType": "error"
+			},
+			"suspicious": { "noExplicitAny": "warn" }
 		}
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "double"
+			"trailingCommas": "all",
+			"semicolons": "always",
+			"bracketSameLine": false
+		}
+	},
+	"html": { "formatter": { "selfCloseVoidElements": "always" } },
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	},
 	"overrides": [
 		{
-			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+			"includes": ["**/*.astro"],
 			"linter": {
 				"rules": {
 					"style": {
