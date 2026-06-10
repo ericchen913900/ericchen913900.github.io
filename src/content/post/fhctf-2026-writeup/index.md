@@ -16,7 +16,7 @@ Final ： Rank 1（Top 1）
 ## Misc
 
 ### Sanity Check
-![image](https://hackmd.io/_uploads/HJQuP-V4-x.png)
+![image](./images/HJQuP-V4-x.png)
 :::success
 並看如何發放獎勵。
 
@@ -95,7 +95,7 @@ FhCTF{cooking_is_fun}
 ### 笑話大師
 **恭喜這題被評為最鳥的一題**
 ~~我就只是輸入一個?~~
-![image](https://hackmd.io/_uploads/Bk2pb5cEbl.png)
+![image](./images/Bk2pb5cEbl.png)
 
 :::success
 FhCTF{thisi_Prompt_Injection}
@@ -107,7 +107,7 @@ FhCTF{thisi_Prompt_Injection}
 
 ### 分享圖庫
 一進來我們可以看到這個介面只允許 PNG 上傳
-![image](https://hackmd.io/_uploads/Hyl8q8SVbl.png)
+![image](./images/Hyl8q8SVbl.png)
 發現 PNG 有固定的 8 字節標頭，那我們就可以在標頭之後添加 PHP 代碼
 ```
 png_header = (
@@ -195,7 +195,7 @@ FhCTF{png_format?Cannot_stop_php!}
 :::
 
 ### 分享圖庫 Revenge
-![image](https://hackmd.io/_uploads/Hko6W-AEZl.png)
+![image](./images/Hko6W-AEZl.png)
 目標 (Goal)： Dockerfile 第 14 行顯示 Flag 儲存在環境變數中：`ENV flag="FhCTF{fake_flag}"`。因此，我們的目標是執行 PHP 程式碼來讀取環境變數（例如使用 `getenv('flag')` 或 `$_ENV`）。
 
 漏洞入口 (Vulnerability)： upload.php 負責處理上傳。
@@ -305,13 +305,13 @@ FhCTF{N0t_s4f3_t0_ou7put_th3_err0r_m5g}
 
 ## Survey
 ### Survey
-![image](https://hackmd.io/_uploads/SJ20zccV-e.png)
+![image](./images/SJ20zccV-e.png)
 :::success
 FhCTF{Th4nk_y0u_f0r_y0ur_f33db4ck_7hCTF}
 :::
 ## Web
 ### INTERNAL LOGIN
-![image](https://hackmd.io/_uploads/S1a7i-VVbe.png)
+![image](./images/S1a7i-VVbe.png)
 
 客戶端 SQL 注入模擬，在 Username 欄位輸入
 
@@ -327,7 +327,7 @@ FhCTF{SQL_1nj_42_Success}
 
 ### Web Robots
 robots.txt 對，就是 robots.txt
-![image](https://hackmd.io/_uploads/Ske2eG4V-l.png)
+![image](./images/Ske2eG4V-l.png)
 
 可以看到有
 ```
@@ -338,13 +338,13 @@ Disallow /secret
 
 那我們就直接進/secret看吧
 
-![image](https://hackmd.io/_uploads/Hk2efM4Vbg.png)
+![image](./images/Hk2efM4Vbg.png)
 
 進 /secret 後會跳轉到 /secret/index.html ，那很明顯我們看的出來上一步就是目錄
 
-![image](https://hackmd.io/_uploads/Hyl6zMVN-e.png)
+![image](./images/Hyl6zMVN-e.png)
 
-![image](https://hackmd.io/_uploads/rJK1QMN4-e.png)
+![image](./images/rJK1QMN4-e.png)
 
 :::success
 FhCTF{r0b075_4r3_n0t_v15ible_in_tx7}
@@ -352,20 +352,20 @@ FhCTF{r0b075_4r3_n0t_v15ible_in_tx7}
 
 ### Doors Open
 
-![image](https://hackmd.io/_uploads/HkgW2GEVbl.png)
+![image](./images/HkgW2GEVbl.png)
 
 一樣先看 robots.txt
 
-![image](https://hackmd.io/_uploads/BJXBnzEVbl.png)
+![image](./images/BJXBnzEVbl.png)
 
 那就進 /doors 看看吧
 
-![image](https://hackmd.io/_uploads/rJdh2fNVWx.png)
+![image](./images/rJdh2fNVWx.png)
 
 這裡點開直接是 /door/1 ， 那我們就開始用Burp跑0~10000，發現都不是，
 看著越來越多人解，就想說應該沒那麼難吧，所以就想說會不會是負數....
 
-![image](https://hackmd.io/_uploads/SJ_Kaf44bl.png)
+![image](./images/SJ_Kaf44bl.png)
 
 ### The Visual Blind Spot
 
@@ -403,7 +403,7 @@ FhCTF{Stn3am_C1ph3p}
 
 ### SYSTEM ROOT SHELL
 
-![image](https://hackmd.io/_uploads/HkhleXEEWl.png)
+![image](./images/HkhleXEEWl.png)
 
 
 在 script 標籤中發現
@@ -436,7 +436,7 @@ FhCTF{RCE_Success_v3}
 :::
 
 ### Welcome to Cybersecurity Jungle
-![image](https://hackmd.io/_uploads/rky-b7VEZg.png)
+![image](./images/rky-b7VEZg.png)
 一進來會看到上面的畫面，看 HTML source時,注意到 title 標籤包含一段日文
 ```
 言語（げんご）を変（か）えても、プログラミングの本質（ほんしつ）は変（か）わらない。
@@ -455,7 +455,7 @@ Cookie 值 (Base64 編碼): 44Go44GF44KL44O8
 
 接下來進到 Application 改 cookie 值後重新整理即可
 
-![image](https://hackmd.io/_uploads/B11HGXV4Wx.png)
+![image](./images/B11HGXV4Wx.png)
 
 :::success
 FhCTF{Th3_e553nc3_of_pr0gramm1n6_is_ind3p3nden7_of_the_languag3_u53d}
@@ -477,19 +477,19 @@ Payload:
 ```python
 \u007b\u007bcycler.__init__.__globals__.os.environ['FLAG']\u007d\u007d
 ```
-![image](https://hackmd.io/_uploads/HJ0vVLHNZe.png)
+![image](./images/HJ0vVLHNZe.png)
 :::success
 FhCTF{T3mpl371ng_n33d_t0_b3_m0r3_c4r3full🥹}
 :::
 
 ### Documents
 一進來看照慣例看sources，找出隱藏字元
-![image](https://hackmd.io/_uploads/H1qeuLBNWx.png)
+![image](./images/H1qeuLBNWx.png)
 - "HTTP Header 告訴了你一切"
 
 檢查 HTTP 標頭發現: powerby: FastAPI
 FastAPI 通常有 /openapi.json 端點
-![image](https://hackmd.io/_uploads/Byf0uUSNZe.png)
+![image](./images/Byf0uUSNZe.png)
 可以發現 /flag.html 端點需要 Referer 標頭，所以我們需要偽造他
 
 ```powershell
@@ -498,13 +498,13 @@ Invoke-WebRequest -Uri "http://9f1604e5.fhctf.systems/flag.html" `
     -UseBasicParsing | Select-Object -ExpandProperty Content
 ```
 
-![image](https://hackmd.io/_uploads/ryBarUrVWe.png)
+![image](./images/ryBarUrVWe.png)
 :::success
 FhCTF{URL_encod3d_m337_p47h_d15cl0sure😱😱}
 :::
 
 ### LOG ACCESS
-![image](https://hackmd.io/_uploads/HkPJE9qEWe.png)
+![image](./images/HkPJE9qEWe.png)
 
 這題提供了一個「安全的日誌讀取工具」，聲稱能偵測並阻擋所有 Path Traversal 攻擊 。題目明確提示：這個工具完全沒有後端，所有判斷似乎都在瀏覽器中完成。
 
@@ -545,7 +545,7 @@ FhCTF{Path_Tr4v_535}
 
 ### Pathway-leak
 打開題目網站，觀察檔案管理介面與網頁原始碼。
-![image](https://hackmd.io/_uploads/rJZQr9c4Zx.png)
+![image](./images/rJZQr9c4Zx.png)
 
 在 `<script>` 區塊中發現檔案載入是呼叫：
 
@@ -719,8 +719,8 @@ FhCTF{p4th_tr4v3rs4l_w3_w4n7_t0_av01d}
     - 看到 `kid = ../../../../../../dev/null` → 讀取 `/dev/null` 當作 secret（空字串）。
     - 用空字串驗證 HMAC Signature，因為我們本地端也是用空字串簽的，所以驗證會通過。
     - Payload 裡 `role = admin`，因此認定我們是管理員。
-![image](https://hackmd.io/_uploads/HyxDe4pVWe.png)
-![image](https://hackmd.io/_uploads/BkuYxE6Vbl.png)
+![image](./images/HyxDe4pVWe.png)
+![image](./images/BkuYxE6Vbl.png)
 
 :::success
 FhCTF{Th3_k1d_u53d_JWT_t0_tr4v3rs3_p4th5}
@@ -744,13 +744,13 @@ FhCTF{🐷B3_c4r3ful_y0ur_SQL_synt4x🐷}
 ## Reverse
 ### 簡易腳本閱讀器
 - 先看PY，從第 2 行開始,跳過了 Flag
-![image](https://hackmd.io/_uploads/SykmTIHNZl.png)
+![image](./images/SykmTIHNZl.png)
 - 用戶輸入可以修改列表中的任何位置
-![image](https://hackmd.io/_uploads/B1Hw6IH4be.png)
+![image](./images/B1Hw6IH4be.png)
 - JUMP 指令可以改變指令指針到任何索引
-![image](https://hackmd.io/_uploads/H15jpISNbg.png)
+![image](./images/H15jpISNbg.png)
 那其實我們直接輸入 "JUMP 0" 就好了
-![image](https://hackmd.io/_uploads/rytxR8S4bl.png)
+![image](./images/rytxR8S4bl.png)
 :::success
 FhCTF{f1l3_10_and_jumb_m4st3r}
 :::
@@ -866,9 +866,9 @@ FhCTF{R3v3rs3_Eng1n33r1ng_1s_Ar7}
 
 ### 壞掉的解碼器
 給了兩個檔案
-![{EFEA1592-5D42-4F42-A2D1-A2F66BD88A55}](https://hackmd.io/_uploads/HyoqugGBZe.png)
+![{EFEA1592-5D42-4F42-A2D1-A2F66BD88A55}](./images/HyoqugGBZe.png)
 其中encrypted_flag裡有
-![{58654F7F-3F17-4FA5-AEAC-649927D2FA73}](https://hackmd.io/_uploads/HJZ0deGBWl.png)
+![{58654F7F-3F17-4FA5-AEAC-649927D2FA73}](./images/HJZ0deGBWl.png)
 decrypt裡有
 ```
 ELF          >          @       ?          @ 8 
@@ -963,7 +963,7 @@ FhCTF{Why_not_use_std::string_instead_of_char_arrays?}
 這題展示了為什麼 ECB 加密模式不適合用於圖像資料。
 
 - 加密機制分析
-![image](https://hackmd.io/_uploads/rkzySwyHWl.png)
+![image](./images/rkzySwyHWl.png)
 
 題目使用腳本將 flag 轉換為 BMP 圖檔後，再透過 AES-256-ECB 加密。特別的是，加密金鑰直接從 flag 的十六進位表示取得。由於 OpenSSL 的 `enc` 指令在金鑰長度不足時會自動填充零位元組至 32 bytes，實際加密過程中的金鑰是可預測的。
 
@@ -1039,18 +1039,18 @@ if __name__ == "__main__":
     solve()
 
 ```
-![image](https://hackmd.io/_uploads/Hy-bfOJBWg.png)
+![image](./images/Hy-bfOJBWg.png)
 
 
 
 我們可以看到是反過來的`FhCTF{3C13_m0d3_1s_z0_S3cur17y_}`
-![image](https://hackmd.io/_uploads/BJC6WdyB-g.png)
+![image](./images/BJC6WdyB-g.png)
 :::success
 FhCTF{3C13_m0d3_1s_z0_S3cur17y_}
 :::
 
 ### Encode By Py 😘
-![image](https://hackmd.io/_uploads/HJUDFD1HWl.png)
+![image](./images/HJUDFD1HWl.png)
 
 這題的核心是「自製 Emoji 加密」其實只是一個可逆的位移編碼，加上可預測的 key 循環與大量重複樣本，整體安全性非常脆弱。
 
@@ -1270,8 +1270,8 @@ FhCTF{3C13_m0d3_1s_z0_S3cur17y_}
         if __name__ == "__main__":
             main()
         ```
-![image](https://hackmd.io/_uploads/B1j2kX-Sbl.png)
-![upload_437e1fd2557bda22c676a81c046844ce](https://hackmd.io/_uploads/SkV9pfWrbx.png)
+![image](./images/B1j2kX-Sbl.png)
+![upload_437e1fd2557bda22c676a81c046844ce](./images/SkV9pfWrbx.png)
 
 :::success
 FhCTF{S1mpl3_FL46_We4k_P4ss}
@@ -1348,7 +1348,7 @@ FhCTF{S1mpl3_FL46_We4k_P4ss}
         - `plaintext.enc` 檔案提示
         - 部分 Key 提示：`r5K9`
 
-        ![{6ED9B10C-BFBE-4518-B8C4-EF7B5ABA8D9F}](https://hackmd.io/_uploads/HkfK5nh4Wg.png)
+        ![{6ED9B10C-BFBE-4518-B8C4-EF7B5ABA8D9F}](./images/HkfK5nh4Wg.png)
 - Part 2: DES 密鑰爆破 (Cryptography)
 
     - 題目背景
@@ -1684,18 +1684,18 @@ FhCTF{CrYpt0_W3b_M4st3r_2025}
 ## OSINT
 ### Art Work
 給了一張圖片:
-![image](https://hackmd.io/_uploads/B1PkxvH4Wg.png)
+![image](./images/B1PkxvH4Wg.png)
 以圖搜圖我們會發現一個叫做「風之籽」的作品被展出於111.11.04-112.02.05的「2022屏東落山風藝術季」
 :::success
 FhCTF{屏東縣_落山風藝術季_1111104-1120205}
 :::
 ### Trace the Landmark
 給了三張圖片
-![photo-1](https://hackmd.io/_uploads/H1QLbvHEWx.jpg)
-![photo-2](https://hackmd.io/_uploads/BJmUbDrEbg.jpg)
-![photo-3](https://hackmd.io/_uploads/B1mUWPHV-g.jpg)
+![photo-1](./images/H1QLbvHEWx.jpg)
+![photo-2](./images/BJmUbDrEbg.jpg)
+![photo-3](./images/B1mUWPHV-g.jpg)
 用第三張來圖片搜尋找到了**Piazza della Rotonda**這個建築
-![image](https://hackmd.io/_uploads/r1s9-wSEbe.png)
+![image](./images/r1s9-wSEbe.png)
 按照題目Hint排好後得到:
 :::success
 FhCTF{Piazza_della_Rotonda_00186_Roma_RM_Italy}
@@ -1703,12 +1703,12 @@ FhCTF{Piazza_della_Rotonda_00186_Roma_RM_Italy}
 
 ### 島1
 給了這張圖
-![land-1](https://hackmd.io/_uploads/H1TwzwrEWe.png)
+![land-1](./images/H1TwzwrEWe.png)
 即使被打碼，還是可以大致看出是「新_廟口餐廳」
 google搜尋後:
-![image](https://hackmd.io/_uploads/rJICfvrNZx.png)
+![image](./images/rJICfvrNZx.png)
 找到餐廳後我就對著菜單和圖中的菜一一窮舉
-![37077136260_d855810352_c](https://hackmd.io/_uploads/By71mvrEbl.jpg)
+![37077136260_d855810352_c](./images/By71mvrEbl.jpg)
 最後答案是原圖正中間的那道**炒千佛手**
 :::success
 FhCTF{新大廟口活海鮮_炒千佛手}
@@ -1718,11 +1718,11 @@ FhCTF{新大廟口活海鮮_炒千佛手}
 ### The FH Gift
 一開始會出現 `malware_sample.eml` 點開來會發現:
 
-![image](https://hackmd.io/_uploads/Hys5iXIE-x.png)
+![image](./images/Hys5iXIE-x.png)
 
 這個 salary_adjustment.docx 文件實際上不是 Word 文件，而是一個偽裝的 ZIP 壓縮檔 。通過檢查文件的魔術數字（前幾個 bytes），可以看到它以 PK\x03\x04 開頭，這是 ZIP 檔案的特徵標記。
 
-![image](https://hackmd.io/_uploads/HJE8hmI4Zx.png)
+![image](./images/HJE8hmI4Zx.png)
 
 :::success
 FhCTF{M1M3_Typ3s_C4n_B3_D3c3pt1v3}
@@ -1730,22 +1730,22 @@ FhCTF{M1M3_Typ3s_C4n_B3_D3c3pt1v3}
 
 ### 工商時間 1
 他給了以下圖片:
-![exhibition](https://hackmd.io/_uploads/SyVlqE8NWe.png)
+![exhibition](./images/SyVlqE8NWe.png)
 
 把他丟到 https://www.metadata2go.com/ ，可以得到以下資料:
-![image](https://hackmd.io/_uploads/rJWOqEIEZg.png)
+![image](./images/rJWOqEIEZg.png)
 
 然後他的description是一個網站
 點進去他會跳出來一個帶你到展覽網站的 按ok就會跳過去
 
 
-![2026-01-03_14.35.58](https://hackmd.io/_uploads/SJwioE8NZe.png)
+![2026-01-03_14.35.58](./images/SJwioE8NZe.png)
 
 可以看到https://github.com/tschool-students/tschool-students.github.io
 
 我們可以知道是「臺北市數位實驗高級中等學校學習分享會」
 
-![image](https://hackmd.io/_uploads/Sy1M0NLVWg.png)
+![image](./images/Sy1M0NLVWg.png)
 
 2026.1.18 9:00 - 16:00~1.19 9:00 - 16:00 轉成 ISO 8601 格式是
 `2026-01-18T09:00_2026-01-19T16:00`
@@ -1760,11 +1760,11 @@ FhCTF{T-SCHOOL_STUDENTS_EXPO'26_2026-01-18T09:00_2026-01-19T16:00}
 
 我們把地址丟到Google Maps收尋，並複製座標貼上來:
 
-![截圖 2026-01-05 00.25.06](https://hackmd.io/_uploads/B15jEGOE-e.png)
+![截圖 2026-01-05 00.25.06](./images/B15jEGOE-e.png)
 
 
 ### Lithium exploration
-![SalardeUyuni](https://hackmd.io/_uploads/ryBwMS8N-x.jpg)
+![SalardeUyuni](./images/ryBwMS8N-x.jpg)
 
 丟給AI
 
@@ -1781,18 +1781,18 @@ FhCTF{Bolivia_SalardeUyuni_Lithium}
 
 ### SRL
 給了以下圖片
-![SRL](https://hackmd.io/_uploads/HyjFIrLNbx.jpg)
+![SRL](./images/HyjFIrLNbx.jpg)
 我們可以看到右方是大巨蛋後景有國父紀念館和台北101
 所以我們可以推斷我們在:
-![image](https://hackmd.io/_uploads/SyOQIrLVbx.png)
+![image](./images/SyOQIrLVbx.png)
 
 ### 島2
 ```
 在清末民初年代，人們對麻瘋病（痲瘋病）所知有限，為了阻絕得病的患者，就把他們送到建功嶼上自生自滅，因此這座島被稱為「痲瘋礁」。患者被隔離在島上後，只能遙望金門本島，無法回家。
 ``` 
 by google AI 搜尋
-![image](https://hackmd.io/_uploads/BJVgdBL4We.png)
-![image](https://hackmd.io/_uploads/ryYTPBU4-g.png)
+![image](./images/BJVgdBL4We.png)
+![image](./images/ryYTPBU4-g.png)
 
 ### 漂亮的圓頂 1
 
@@ -1800,7 +1800,7 @@ by google AI 搜尋
 請通靈
 :::
 
-![image](https://hackmd.io/_uploads/rJcNmEaVZx.png)
+![image](./images/rJcNmEaVZx.png)
 
 ### 漂亮的圓頂 2
 
@@ -1808,7 +1808,7 @@ by google AI 搜尋
 
 https://www.turkishairlines.com/zh-tw/flights/fly-different/touristanbul/
 
-![截圖 2026-01-05 00.40.35](https://hackmd.io/_uploads/r1XXdGO4Wx.png)
+![截圖 2026-01-05 00.40.35](./images/r1XXdGO4Wx.png)
 
 看Google Maps，可以發現我們的目的地，就正處於博斯普鲁斯海峽附近，我們可以驗證這是對的方向。
 
@@ -1822,10 +1822,10 @@ FhCTF{1830-2300_0401-1031}
 :::
 
 ### 沒戴安全帽的騎士
-![rider_without_helmet](https://hackmd.io/_uploads/rka2szZrZe.png)
+![rider_without_helmet](./images/rka2szZrZe.png)
 
 上網簡單圖片查資料，可知廠牌、車型，每個試一下，就能鎖定下答案。
-![image](https://hackmd.io/_uploads/HkfkhMZHbg.png)
+![image](./images/HkfkhMZHbg.png)
 
 :::success
 FhCTF{2014_Kymco_Many50}
@@ -1875,7 +1875,7 @@ print(result.decode('ascii'))
 ```
 
 將解密得到的 MD5 hash `12c1842c3ccafe7408c23ebf292ee3d9` 提交到 VirusTotal 進行查詢。
-![image](https://hackmd.io/_uploads/Hykn3m6EZe.png)
+![image](./images/Hykn3m6EZe.png)
 在 VirusTotal 的分析報告中,可以找到該惡意軟體的 C2 通訊目標:
 - **C2 伺服器**: `http://171.22.28.221/5c06c05b7b34e8e6.php`
 
